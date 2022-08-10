@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Card_1 from "./components/Card_1/Card_1";
+import CardOne from "./components/CardOne/CardOne";
 
 const Container = styled.div`
   display: flex;
@@ -10,10 +10,7 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-      <Card_1 />
-      <Card_1 />
-      <Card_1 />
-      <Card_1 />
+      <CardOne />
     </Container>
   );
 };

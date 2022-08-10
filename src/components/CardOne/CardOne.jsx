@@ -2,14 +2,14 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import "./Card_1.scss";
+import "./CardOne.scss";
 
-const Card_1 = () => {
+const CardOne = () => {
   return (
     <div className="container">
       <div className="color-background"></div>
       <div className="img"></div>
-      <div className="icon__heart">
+      <div className="icon icon__heart">
         <FontAwesomeIcon icon={faHeart} />
       </div>
       <div className="card-info">
@@ -18,7 +18,7 @@ const Card_1 = () => {
         <div className="card-info__price-group">
           <div className="card-info__price-group__old-price">$20000</div>
           <div className="card-info__price-group__new-price">$9999</div>
-          <div className="icon__cart">
+          <div className="icon icon__cart">
             <FontAwesomeIcon icon={faCartShopping} />
           </div>
         </div>
@@ -27,4 +27,4 @@ const Card_1 = () => {
   );
 };
 
-export default Card_1;
+export default CardOne;
