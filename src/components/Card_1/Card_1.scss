@@ -30,21 +30,42 @@
     background-repeat: no-repeat;
     transition: ease 0.3s all;
     position: absolute;
-    bottom: calc(100% - 220px);
+    bottom: calc(100% - 230px);
   }
   .card-info {
     text-align: center;
-    padding: 0 20px 20px;
+    padding: 0 30px 20px;
     &__name {
       font-size: 35px;
     }
-    &__date{
+    &__date {
       color: grey;
     }
-    &__price{
+    &__price-group {
       margin-top: 20px;
       text-align: left;
       font-size: 25px;
+      position: relative;
+      &__old-price {
+        text-decoration: line-through;
+        color: red;
+        font-size: 18px;
+      }
+    }
+  }
+  .icon {
+    &__heart {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 30px;
+      color: rgba(0, 0, 0, 0.3);
+    }
+    &__cart {
+      position: absolute;
+      top: 0;
+      right: 0;
+      font-size: 35px;
     }
   }
 }
