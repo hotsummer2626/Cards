@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import CardOne from "./components/CardOne/CardOne";
+import CardTwo from "./components/CardTwo/CardTwo";
 import { cardInfo } from "./cardInfo";
 
 const Container = styled.div`
@@ -9,9 +10,11 @@ const Container = styled.div`
 `;
 
 const App = () => {
+  const [currentCardInfo, setCurrentCardInfo] = useState(cardInfo);
   return (
     <Container>
-      <CardOne {...cardInfo} />
+      <CardOne {...currentCardInfo} />
+      <CardTwo {...currentCardInfo} setCurrentCardInfo={setCurrentCardInfo} />
     </Container>
   );
 };
