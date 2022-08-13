@@ -22,35 +22,22 @@ const CardTwo = ({
       <div className={styles.description}>{description}</div>
       <div className={styles.price}>{newPrice}</div>
       <ul className={styles["icon__star-group"]}>
-        {[1, 2, 3, 4, 5].map((param, index) =>
-          param <= satisfaction ? (
-            <li
-              className={`${styles["icon__star-group__star"]} ${styles.checked}`}
-              key={index}
-              onClick={() =>
-                setCurrentCardInfo((prevCardInfo) => ({
-                  ...prevCardInfo,
-                  satisfaction: param,
-                }))
-              }
-            >
-              <FontAwesomeIcon icon={faStar} />
-            </li>
-          ) : (
-            <li
-              className={styles["icon__star-group__star"]}
-              key={index}
-              onClick={() =>
-                setCurrentCardInfo((prevCardInfo) => ({
-                  ...prevCardInfo,
-                  satisfaction: param,
-                }))
-              }
-            >
-              <FontAwesomeIcon icon={faStar} />
-            </li>
-          )
-        )}
+        {[1, 2, 3, 4, 5].map((param, index) => (
+          <li
+            className={`${styles["icon__star-group__star"]} ${
+              param <= satisfaction ? styles.checked : ""
+            }`}
+            key={index}
+            onClick={() =>
+              setCurrentCardInfo((prevCardInfo) => ({
+                ...prevCardInfo,
+                satisfaction: param,
+              }))
+            }
+          >
+            <FontAwesomeIcon icon={faStar} />
+          </li>
+        ))}
       </ul>
       <div className={styles.button}>Buy Now</div>
     </div>

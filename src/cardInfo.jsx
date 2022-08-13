@@ -1,4 +1,5 @@
 import batmanImg from "./assets/batman.webp";
+import nikeShoesImg from "./assets/nike_shoes.png";
 
 export const cardInfo = {
   title: "Batman",
@@ -8,4 +9,9 @@ export const cardInfo = {
   oldPrice: "$20000",
   newPrice: "$9999",
   satisfaction: "4",
+};
+
+export const nikeShoesInfo = {
+  title: "Nike Shoes",
+  img: nikeShoesImg,
 };
