@@ -7,6 +7,7 @@ import { cardInfo, nikeShoesInfo } from "./cardInfo";
 
 const Container = styled.div`
   display: flex;
+  gap: 10px;
   margin-top: 200px;
   justify-content: center;
 `;
