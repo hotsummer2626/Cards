@@ -1,0 +1,117 @@
+.container {
+  width: 320px;
+  height: 400px;
+  background: #232323;
+  border-radius: 20px;
+  position: relative;
+  .productBx {
+    width: 100%;
+    height: max-content;
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    transition: ease-in-out 0.5s;
+    img {
+      width: 75%;
+      transform: translateX(0) rotateZ(0) rotateY(180deg);
+      transition: ease 0.5s;
+    }
+    .title {
+      width: 100%;
+      position: absolute;
+      color: #fff;
+      bottom: 0;
+    }
+  }
+  .contentBx {
+    text-align: center;
+    transform: translateY(270px);
+    transition: ease 0.5s;
+    transition-delay: 0.3s;
+    .size,
+    .color {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.5s;
+      transition-delay: 0.3s;
+      .subtitle {
+        font-size: 12px;
+        color: #fff;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+    .size {
+      span {
+        display: inline-block;
+        margin: 0 5px;
+        width: 26px;
+        height: 26px;
+        line-height: 26px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 14px;
+        color: #111;
+        background: #fff;
+        transition: 0.5s;
+        &:hover {
+          background: #9bdc28;
+        }
+      }
+    }
+    .color {
+      margin: 13px 17px;
+      span {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+        background: #ff0;
+        &:nth-child(2) {
+          background-color: #9bdc28;
+        }
+        &:nth-child(3) {
+          background-color: #03a9f4;
+        }
+        &:nth-child(4) {
+          background-color: #e91e63;
+        }
+      }
+    }
+  }
+  .button {
+    display: inline-block;
+    margin: 10px auto 0;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #111;
+    background-color: #fff;
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  &:hover {
+    .productBx {
+      top: -100px;
+      transform: translateY(0);
+      img {
+        width: 100%;
+        transform: translateX(-20px) rotateZ(-25deg) rotateY(180deg);
+      }
+    }
+    .contentBx {
+      transform: translateY(230px);
+      .size,
+      .color,
+      .button {
+        opacity: 1;
+      }
+    }
+  }
+}
