@@ -1,5 +1,5 @@
 .container {
-  width: 325px;
+  width: 345px;
   height: 430px;
   display: flex;
   position: relative;
@@ -8,7 +8,7 @@
   transition: ease 0.5s;
   overflow: hidden;
   .imgBx {
-    min-width: 325px;
+    min-width: 345px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -16,9 +16,8 @@
   }
   .contentBx {
     box-sizing: border-box;
-    min-width: 325px;
+    min-width: 345px;
     padding: 30px 20px;
-    background: #63237a;
     position: relative;
     &::before {
       content: "";
@@ -63,14 +62,6 @@
           text-align: center;
           color: #fff;
           cursor: pointer;
-          &.highlight {
-            color: #63237a;
-            background: #fff;
-          }
-          &:hover {
-            color: #63237a;
-            background: #fff;
-          }
         }
       }
     }
@@ -84,23 +75,17 @@
       text-decoration: none;
       text-transform: uppercase;
       text-align: center;
-      color: #63237a;
       width: 140px;
       height: 40px;
       line-height: 40px;
       border: 1px solid #fff;
       display: block;
-      background: #fff;
       position: absolute;
       bottom: 30px;
       right: 20px;
-      &:hover {
-        color: #fff;
-        background: #63237a;
-      }
     }
   }
   &:hover {
-    width: 650px;
+    width: 690px;
   }
 }
