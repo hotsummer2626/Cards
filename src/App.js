@@ -8,45 +8,30 @@ import CardFive from "./components/CardFive/CardFive";
 import {
   cardInfo,
   nikeShoesInfo,
+  brands,
   a2Formula,
   aptamilGoldFormula,
   bellamyFormula,
 } from "./cardInfo";
-import a2Logo from "./assets/a2_logo.png";
-import aptamilGoldLogo from "./assets/aptamil_gold_logo.png";
-import bellamyLogo from "./assets/bellamy_logo.png";
 
 const Container = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 10px;
   margin-top: 200px;
-  justify-content: center;
 `;
 
 const App = () => {
   const [currentCardInfo, setCurrentCardInfo] = useState(cardInfo);
   return (
     <Container>
-      {/* <CardOne {...currentCardInfo} />
+      <CardOne {...currentCardInfo} />
       <CardTwo {...currentCardInfo} setCurrentCardInfo={setCurrentCardInfo} />
       <CardThree {...nikeShoesInfo} />
-      <CardFour {...nikeShoesInfo} /> */}
-      <CardFive
-        brandImg={a2Logo}
-        formulaInfo={a2Formula}
-        themeColor="#63237a"
-      />
-      <CardFive
-        brandImg={aptamilGoldLogo}
-        formulaInfo={aptamilGoldFormula}
-        themeColor="#0181c0"
-      />
-      <CardFive
-        brandImg={bellamyLogo}
-        formulaInfo={bellamyFormula}
-        themeColor="#1664a0"
-      />
+      <CardFour {...nikeShoesInfo} />
+      <CardFive brand={brands.a2} formulaInfo={a2Formula} />
+      <CardFive brand={brands.aptamilGold} formulaInfo={aptamilGoldFormula} />
+      <CardFive brand={brands.bellamy} formulaInfo={bellamyFormula} />
     </Container>
   );
 };

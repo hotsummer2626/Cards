@@ -12,6 +12,9 @@ import bellamyStageOne from "./assets/bellamy_s1.webp";
 import bellamyStageTwo from "./assets/bellamy_s2.webp";
 import bellamyStageThree from "./assets/bellamy_s3.webp";
 import bellamyStageFour from "./assets/bellamy_s4.webp";
+import a2Logo from "./assets/a2_logo.png";
+import aptamilGoldLogo from "./assets/aptamil_gold_logo.png";
+import bellamyLogo from "./assets/bellamy_logo.png";
 
 export const cardInfo = {
   title: "Batman",
@@ -26,6 +29,12 @@ export const cardInfo = {
 export const nikeShoesInfo = {
   title: "Nike Shoes",
   img: nikeShoesImg,
+};
+
+export const brands = {
+  a2: { name: "a2", logo: a2Logo },
+  aptamilGold: { name: "aptamilGold", logo: aptamilGoldLogo },
+  bellamy: { name: "bellamy", logo: bellamyLogo },
 };
 
 const formulaPrice = {

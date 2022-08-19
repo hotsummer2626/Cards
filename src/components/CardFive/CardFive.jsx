@@ -1,11 +1,9 @@
 import React, { useState } from "react";
 import styles from "./CardFive.module.scss";
 
-const CardFive = ({brandImg, formulaInfo, themeColor }) => {
-  const [currentImg, setCurrentImg] = useState(`url(${brandImg})`);
+const CardFive = ({ brand, formulaInfo }) => {
+  const [currentImg, setCurrentImg] = useState(`url(${brand.logo})`);
   const [currentProduct, setCurrentProduct] = useState(formulaInfo[0]);
-  const [highlightStage, setHighlightStage] = useState("");
-  const [isButtonHover, setIsButtonHover] = useState(false);
 
   const handleOnClickChange = (formula) => {
     setCurrentImg(`url(${formula.img})`);
@@ -15,14 +13,14 @@ const CardFive = ({brandImg, formulaInfo, themeColor }) => {
   return (
     <div
       className={styles.container}
-      onMouseLeave={() => setCurrentImg(`url(${brandImg})`)}
+      onMouseLeave={() => setCurrentImg(`url(${brand.logo})`)}
       onMouseEnter={() => setCurrentImg(`url(${currentProduct.img})`)}
     >
       <div
         className={styles.imgBx}
         style={{ backgroundImage: currentImg }}
       ></div>
-      <div className={styles.contentBx} style={{ background: `${themeColor}` }}>
+      <div className={`${styles.contentBx} ${styles[brand.name]}`}>
         <h2 className={styles.title}>{currentProduct.title}</h2>
         <h4>Baby Formula</h4>
         <div className={styles.details}>
@@ -34,14 +32,9 @@ const CardFive = ({brandImg, formulaInfo, themeColor }) => {
           <div className={styles.items}>
             {formulaInfo.map((formula) => (
               <span
-                style={
-                  currentProduct.stage === formula.stage ||
-                  highlightStage === formula.stage
-                    ? { color: `${themeColor}`, background: "#fff" }
-                    : {}
-                }
-                onMouseEnter={() => setHighlightStage(formula.stage)}
-                onMouseLeave={() => setHighlightStage("")}
+                className={`${styles[brand.name]} ${
+                  currentProduct.stage === formula.stage ? styles.highlight : ""
+                }`}
                 onClick={() => handleOnClickChange(formula)}
               >
                 {formula.stage}
@@ -53,20 +46,7 @@ const CardFive = ({brandImg, formulaInfo, themeColor }) => {
           <span className={styles.moneySymbol}>$</span>
           {currentProduct.price}
         </div>
-        <a
-          href="#"
-          className={styles.button}
-          style={
-            isButtonHover
-              ? { color: "#fff", background: `${themeColor}` }
-              : {
-                  color: `${themeColor}`,
-                  background: "#fff",
-                }
-          }
-          onMouseEnter={() => setIsButtonHover(true)}
-          onMouseLeave={() => setIsButtonHover(false)}
-        >
+        <a href="#" className={`${styles.button} ${styles[brand.name]}`}>
           Buy Now
         </a>
       </div>

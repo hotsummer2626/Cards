@@ -1,4 +1,17 @@
+@mixin themeColor($property) {
+  &.a2 {
+    #{$property}: #63237a;
+  }
+  &.aptamilGold {
+    #{$property}: #0181c0;
+  }
+  &.bellamy {
+    #{$property}: #1664a0;
+  }
+}
+
 .container {
+  justify-self: center;
   width: 345px;
   height: 430px;
   display: flex;
@@ -12,13 +25,14 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    transition: all 1s ease;
+    transition: all 0.3s ease;
   }
   .contentBx {
     box-sizing: border-box;
     min-width: 345px;
     padding: 30px 20px;
     position: relative;
+    @include themeColor(background);
     &::before {
       content: "";
       display: block;
@@ -62,6 +76,11 @@
           text-align: center;
           color: #fff;
           cursor: pointer;
+          &:hover,
+          &.highlight {
+            @include themeColor(color);
+            background: #fff;
+          }
         }
       }
     }
@@ -83,6 +102,12 @@
       position: absolute;
       bottom: 30px;
       right: 20px;
+      @include themeColor(color);
+      background: #fff;
+      &:hover {
+        color: #fff;
+        @include themeColor(background);
+      }
     }
   }
   &:hover {
