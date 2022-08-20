@@ -11,13 +11,11 @@ const CardTwo = ({
   satisfaction,
   setCurrentCardInfo,
 }) => {
-  let backgroundImg = `url(${img})`;
   return (
     <div className={styles.container}>
-      <div
-        className={styles.img}
-        style={{ backgroundImage: backgroundImg }}
-      ></div>
+      <div className={styles.img}>
+        <img src={img} alt="batmanImg" />
+      </div>
       <div className={styles.title}>{title}</div>
       <div className={styles.description}>{description}</div>
       <div className={styles.price}>{newPrice}</div>

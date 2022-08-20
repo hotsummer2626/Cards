@@ -5,14 +5,12 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import styles from "./CardOne.module.scss";
 
 const CardOne = ({ title, img, date, oldPrice, newPrice }) => {
-  let backgroundImg = `url(${img})`;
   return (
     <div className={styles.container}>
       <div className={styles["color-background"]}></div>
-      <div
-        className={styles.img}
-        style={{ backgroundImage: backgroundImg }}
-      ></div>
+      <div className={styles.img}>
+        <img src={img} alt="batmanImg" />
+      </div>
       <div className={`${styles.icon} ${styles.icon__heart}`}>
         <FontAwesomeIcon icon={faHeart} />
       </div>
@@ -26,10 +24,10 @@ const CardOne = ({ title, img, date, oldPrice, newPrice }) => {
           <div className={styles["card-info__price-group__new-price"]}>
             {newPrice}
           </div>
-          <div className={`${styles.icon} ${styles.icon__cart}`}>
-            <FontAwesomeIcon icon={faCartShopping} />
-          </div>
         </div>
+      </div>
+      <div className={`${styles.icon} ${styles.icon__cart}`}>
+        <FontAwesomeIcon icon={faCartShopping} />
       </div>
     </div>
   );

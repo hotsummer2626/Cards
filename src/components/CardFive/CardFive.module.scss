@@ -1,3 +1,4 @@
+@import "../../global.scss";
 @mixin themeColor($property) {
   &.a2 {
     #{$property}: #63237a;
@@ -11,13 +12,12 @@
 }
 
 .container {
-  justify-self: center;
+  @include boxOutline;
   width: 345px;
   height: 430px;
   display: flex;
   position: relative;
   box-shadow: 0 15px 45px rgba(0, 0, 0, 0.1);
-  border-radius: 20px;
   transition: ease 0.5s;
   overflow: hidden;
   .imgBx {

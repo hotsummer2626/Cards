@@ -1,9 +1,10 @@
+@import "../../global.scss";
+
 .container {
-  justify-self: center;
+  @include boxOutline;
   width: 320px;
   height: 450px;
   background: #232323;
-  border-radius: 20px;
   overflow: hidden;
   position: relative;
   &::before {
@@ -28,14 +29,14 @@
     color: rgba(255, 255, 255, 0.04);
   }
   .imgBx {
+    @include flexCenter;
     width: 100%;
-    height: 220px;
     position: absolute;
-    top: 20%;
+    top: 15%;
     transition: 0.5s;
     img {
       width: 270px;
-      transform: translateX(20px) rotate(-25deg) rotateY(180deg);
+      transform: rotate(-25deg) rotateY(180deg);
     }
   }
   .contentBx {
@@ -54,13 +55,20 @@
     }
     .size,
     .color {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 8px 20px;
+      @include flexCenter;
+      padding: 8px;
       transition: 0.5s;
       opacity: 0;
       visibility: hidden;
+      .subtitle {
+        color: #fff;
+        font-weight: 300;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin: 0;
+        margin-right: 10px;
+      }
     }
     .size {
       span {
@@ -88,7 +96,6 @@
         border-radius: 50%;
         margin: 0 5px;
         cursor: pointer;
-        background: #ff0;
         &:nth-child(2) {
           background-color: #9bdc28;
         }
@@ -99,15 +106,6 @@
           background-color: #e91e63;
         }
       }
-    }
-    .subtitle {
-      color: #fff;
-      font-weight: 300;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin: 0;
-      margin-right: 10px;
     }
   }
   .button {
@@ -128,7 +126,7 @@
       clip-path: circle(300px at 80% -20%);
     }
     .imgBx {
-      top: -5%;
+      top: 0;
     }
     .contentBx {
       height: 210px;
